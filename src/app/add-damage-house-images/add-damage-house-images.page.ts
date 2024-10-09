@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { CoordinatesServices } from 'src/providers/Geoloation';
 
 @Component({
   selector: 'app-add-damage-house-images',
@@ -9,7 +10,10 @@ import { AlertController } from '@ionic/angular';
 export class AddDamageHouseImagesPage implements OnInit {
   //variables
   url:any
-  constructor(public alertCtrl:AlertController) { }
+  constructor(public alertCtrl:AlertController,public geo:CoordinatesServices) {
+  this.geo.printCurrentPosition();
+    
+   }
 
   ngOnInit() {
   }
