@@ -1,0 +1,17 @@
+.container{
+    text-align: center;
+    ion-button{
+        min-width: 80%;
+    }
+    #img{
+        height:250px;
+        width: 250px;
+    }
+    ion-input{
+        border : 2px solid black
+    }
+    .input{
+        margin:20px auto;
+        width:90%;
+    }
+}

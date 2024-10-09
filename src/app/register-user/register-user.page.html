@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>RegisterUser</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">RegisterUser</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class ="container">
+    <img id ="img" src="../../assets/Images/flood (1).png" />
+    <h3>Household Insurance Damage Assessor</h3>
+     <div class="input">
+      <ion-input placeholder="Username"/>
+      <ion-input placeholder="Email Address"/>
+      <ion-input placeholder=" Confirm Password"/>
+      <ion-input placeholder="Password"/>
+     </div>
+     <ion-button fill="clear">Forgot password?</ion-button>
+     <ion-button>Register</ion-button>
+     <h4>You want to go back? <ion-button routerLink="/login" fill="clear">Login</ion-button></h4>
+  </div>
+
 </ion-content>
