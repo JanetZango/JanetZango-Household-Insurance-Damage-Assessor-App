@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'list-of-houses-added',
     loadChildren: () => import('./list-of-houses-added/list-of-houses-added.module').then( m => m.ListOfHousesAddedPageModule)
   },
+  {
+    path: 'add-multiple-images-for-damage',
+    loadChildren: () => import('./add-multiple-images-for-damage/add-multiple-images-for-damage.module').then( m => m.AddMultipleImagesForDamagePageModule)
+  },
 ];
 
 @NgModule({
