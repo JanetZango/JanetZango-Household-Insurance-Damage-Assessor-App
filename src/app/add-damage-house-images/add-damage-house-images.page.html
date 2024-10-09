@@ -1,13 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>AddDamageHouseImages</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">AddDamageHouseImages</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <h2>Add a House</h2>
+    <h4>Desciption:</h4>
+   <ion-input id="input" />
+
+  <h4>Upload a picture of your house</h4>
+  <ion-button fill="clear">
+    <ion-input type="file" id="insert" accept="image/*" />
+    </ion-button>
+    <h2>Display current location</h2>
+    <ion-button>Add House</ion-button>
+  </div>
 </ion-content>
