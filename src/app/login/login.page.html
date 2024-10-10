@@ -1,14 +1,15 @@
 <ion-content [fullscreen]="true">
   <div class ="container">
-    <img id ="img" src="../../assets/Images/flood (1).png" />
+    <img id ="img" src="../../assets/Images/home.png" />
     <h3>Household Insurance Damage Assessor</h3>
+    <h5>Sign In</h5>
      <div class="input">
       <ion-input placeholder="Email Address"/>
       <ion-input placeholder="Password"/>
      </div>
-     <ion-button fill="clear">Forgot password?</ion-button>
-     <ion-button routerLink="/list-of-houses-added">Login</ion-button>
-
+     <ion-button style="--color:#253B82" fill="clear">Forgot password?</ion-button>
+     <ion-button style="--background:#253B82" routerLink="/list-of-houses-added">Login</ion-button>
+     <h4>You don't have an account? <a routerLink="/register-user">Register</a></h4>
   </div>
-  <h4>You don't have an account? <ion-button routerLink="/register-user" fill="clear">Register</ion-button></h4>
+
 </ion-content>

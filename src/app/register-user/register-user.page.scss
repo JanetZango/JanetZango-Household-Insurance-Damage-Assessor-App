@@ -8,10 +8,26 @@
         width: 250px;
     }
     ion-input{
-        border : 2px solid black
+        border : 2px solid #253B82;
+         margin:7px auto;
+         border-radius: 100px;
+         color:rgb(156, 151, 151);
     }
     .input{
-        margin:20px auto;
+       
         width:90%;
+        margin:5px auto;
+    }
+    h3{
+        padding:20px;
+        font-size:0.9em;
+        color: #253B82;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      
+    }
+    h5{
+        // text-align: left;
+        // padding-left:30px;
+        color:lightgray;
     }
 }
