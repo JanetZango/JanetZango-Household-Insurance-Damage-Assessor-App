@@ -3,14 +3,27 @@
     <img id ="img" src="../../assets/Images/home.png" />
     <h3>Household Insurance Damage Assessor</h3>
     <h5>Sign Up</h5>
-     <div class="input">
-      <ion-input placeholder="Username"/>
-      <ion-input placeholder="Email Address"/>
-      <ion-input placeholder=" Confirm Password"/>
-      <ion-input placeholder="Password"/>
-     </div>
-     <ion-button style="--background:#253B82" >Register</ion-button>
-     <h4>You want to go back? <a routerLink="/login" fill="clear">Login</a></h4>
+    <form [formGroup]="signUpForm">
+      <div class="input">
+        <ion-input placeholder="Username" formControlName="name"/>
+        <div class="field-error" *ngIf="_isInvalidControl('name')">
+          <p>Please enter Username</p>
+        </div>
+        <ion-input placeholder=" Email Aaddres" formControlName="emailAddress"/>
+        <div class="field-error" *ngIf="_isInvalidControl('EmailAddress')">
+          <p>Please enter email address</p>
+        </div>
+        <ion-input placeholder="Password" formControlName="password"/>
+        <div class="field-error" *ngIf="_isInvalidControl('password')">
+          <p>Please enter password</p>
+        </div>
+        <ion-input placeholder="Confirm Password" formControlName="confirmPassword"/>
+        <div class="field-error" *ngIf="_isInvalidControl('confirmPassword')">
+          <p>Password doesnot must</p>
+        </div>
+       </div>
+       <ion-button style="--background:#253B82" [disabled]="!signUpForm.valid" (click)="Register()">Register</ion-button>
+       <h4>You want to go back? <a routerLink="/login" fill="clear">Login</a></h4>
+    </form>
   </div>
-
 </ion-content>

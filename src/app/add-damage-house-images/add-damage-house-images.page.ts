@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { CoordinatesServices } from 'src/providers/Geoloation';
+import { RegisterUser } from 'src/model/RegisterUser.model';
 
 @Component({
   selector: 'app-add-damage-house-images',
@@ -13,8 +14,7 @@ export class AddDamageHouseImagesPage implements OnInit {
   DisplayCurrentLocation:any;
   constructor(public alertCtrl:AlertController,public geo:CoordinatesServices) {
   this.DisplayCurrentLocation = this.geo.printCurrentPosition();
-  console.log("yes",this.DisplayCurrentLocation
-  )
+  console.log("yes",this.DisplayCurrentLocation)
     
    }
 
