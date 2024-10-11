@@ -1,18 +1,15 @@
-
-<ion-content [fullscreen]="true">
-  <!-- <div class="container"> -->
-    <div class="top">
- 
-    </div>
-    <h2>Add a House</h2>
-    <!-- <h4>Desciption:</h4>
-   <ion-input id="input" />
-
-  <h4>Upload a picture of your house</h4>
-  <ion-button fill="clear">
-    <ion-input type="file" id="insert" accept="image/*" />
-    </ion-button>
-    <h2>Display current location</h2>
-    <ion-button>Add House</ion-button>  -->
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-title>Add a house details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="container">
+  <h3>Upload Image of the house </h3>
+  <img id="DefaultImage"  src={{url}} />
+  <ion-input type="file" id="insert" accept="image/*" (change)="insertImagine($event)"/>
+  <h3>Upload description of the house </h3>
+ <ion-input id="input" /> 
+ <h3>Display Current Location </h3>
+ <ion-button style="--background:#253B82" id="AddHouseDetails">Add House details</ion-button>
 
 </ion-content>

@@ -31,6 +31,7 @@ const routes: Routes = [
     path: 'add-multiple-images-for-damage',
     loadChildren: () => import('./add-multiple-images-for-damage/add-multiple-images-for-damage.module').then( m => m.AddMultipleImagesForDamagePageModule)
   },
+
 ];
 
 @NgModule({

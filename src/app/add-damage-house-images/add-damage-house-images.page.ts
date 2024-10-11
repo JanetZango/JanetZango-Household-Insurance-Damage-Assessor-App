@@ -9,9 +9,12 @@ import { CoordinatesServices } from 'src/providers/Geoloation';
 })
 export class AddDamageHouseImagesPage implements OnInit {
   //variables
-  url:any
+  url="../../assets/Images/defaultImage.jpg";
+  DisplayCurrentLocation:any;
   constructor(public alertCtrl:AlertController,public geo:CoordinatesServices) {
-  this.geo.printCurrentPosition();
+  this.DisplayCurrentLocation = this.geo.printCurrentPosition();
+  console.log("yes",this.DisplayCurrentLocation
+  )
     
    }
 
