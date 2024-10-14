@@ -53,7 +53,8 @@ export class RegisterUserPage implements OnInit {
     console.log(this.RegisterUser)
     this.household.Register_UserApi(this.RegisterUser).subscribe(_responseousehold =>{
       console.log(_responseousehold)
-    
+      
+      
     })
   }
 

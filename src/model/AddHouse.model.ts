@@ -1,6 +1,7 @@
 export class AddHouse{
-    public HouseIamge!:string;
-    public HouseDescrip!:string;
-    public HouseAddess!:string;
-
+    public description!:string;
+    public houseImage!:string;
+    public address!:string;
+    public location!:string
+    public images!:[]
 }
