@@ -1,9 +1,9 @@
 # Household Insurance Damage Assessor
-This project is based on Uploading images of the parts that are daamged in the house and also state your location 
+This project is based on Uploading images of the parts that are damaged in the house and also state your location 
 
 ## Getting Started
 ### Dependencies
-npm install @capacitor/geolocation
+npm install @capacitor/geolocation <br/>
 Windows 64-bit Installer: https://nodejs.org/dist/v19.0.0/node-v19.0.0-x64.msi
 npm install -g @ionic/cli
 Download Android Studio
