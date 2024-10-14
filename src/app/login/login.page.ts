@@ -5,7 +5,7 @@ import { Authentification } from 'src/model/Authentification.model';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import { LocalAuthProvider } from 'src/providers/Localauth';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   signInForm!: FormGroup
   access_token:any
   private Authentification!: Authentification
-  constructor(private formBuilder: FormBuilder, public household: HouseholdProvider, public local:LocalAuthProvider,
+  constructor(private formBuilder: FormBuilder, public household: HouseholdProvider,
     public alertCtrl: AlertController, private router: Router,public loader:LoadingController ) {
     this._buildForm();
   }
@@ -44,15 +44,10 @@ export class LoginPage implements OnInit {
     this.household.AuthentificationUser(this.Authentification).subscribe(async _responseLoginUser => {
       console.log(_responseLoginUser)
       this.access_token = _responseLoginUser
-      this.local.CreateDB().then(createDB=>{
-        console.log(createDB)
-        this.local.LogInUsers(this.access_token).then(data =>{
-          console.log(data)
+  
           
           this.router.navigate(['/list-of-houses-added'])
-        })
-      })
-
+  
       
    
     },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
-import { LocalAuthProvider } from 'src/providers/Localauth';
+
 
 @Component({
   selector: 'app-list-of-houses-added',
@@ -9,7 +9,7 @@ import { LocalAuthProvider } from 'src/providers/Localauth';
 })
 export class ListOfHousesAddedPage implements OnInit {
   token:any
-  constructor(public household: HouseholdProvider,public local:LocalAuthProvider) {
+  constructor(public household: HouseholdProvider,) {
     // this.local.GetLoggedInUser().then(data=>{
     //   console.log(data)
     // })

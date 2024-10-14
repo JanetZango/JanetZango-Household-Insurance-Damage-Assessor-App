@@ -10,8 +10,8 @@ import { CoordinatesServices } from 'src/providers/Geoloation';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfigService } from 'src/providers/Config';
-import { LocalAuthProvider } from 'src/providers/Localauth';
-import { IonicStorageModule } from '@ionic/storage-angular';
+
+
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    IonicStorageModule.forRoot(),
+
   ]
     ,
   providers: [
-    CoordinatesServices,HouseholdProvider,ConfigService,LocalAuthProvider,
+    CoordinatesServices,HouseholdProvider,ConfigService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent],
