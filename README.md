@@ -43,8 +43,8 @@ Download jdk-8u361-windows-x64 <br/>
 5.Once its done installing on the project using Visual Studio Code <br/>
 
 ## Authors 
-Janet Zango <br/>
-https://github.com/JanetZango/JanetZango-Household-Insurance-Damage-Assessor-App
+- Janet Zango <br/>
+- https://github.com/JanetZango/JanetZango-Household-Insurance-Damage-Assessor-App
 
 ## Version History
 - 0.0.1 <br/>
