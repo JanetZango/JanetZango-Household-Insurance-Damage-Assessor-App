@@ -25,10 +25,10 @@ Download jdk-8u361-windows-x64 <br/>
 5.Apk will be created <br/>
 
 ##### How to get the apk that was built by finding path
-1.Go to the project then platforms 
-2.Clikc android then click app 
-3.click buld then click outputs 
-4.Then you will see the apk folder then download apk 
+1.Go to the project then platforms <br/>
+2.Clikc android then click app <br/>
+3.click buld then click outputs <br/>
+4.Then you will see the apk folder then download apk <br/>
 
 ##### How to get the apk that was built by running it directly on the device
 1.On your device to to settings and enable developers options  
