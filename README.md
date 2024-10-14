@@ -35,7 +35,7 @@ Download jdk-8u361-windows-x64 <br/>
 2.Run ' ionic cordova run android ' <br/>
 3.App will run on your device. <br/>
 
-To install the project on github <br/>
+##### To install the project on github <br/>
 1.Click 'Clone' green button on your left <br/>
 2.Copy the the http link <br/>
 3.Open terminal on your pc <br/>
