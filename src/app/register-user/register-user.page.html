@@ -5,10 +5,15 @@
     <h5>Sign Up</h5>
     <form [formGroup]="signUpForm">
       <div class="input">
-        <ion-input placeholder="Username" formControlName="name"/>
-        <div class="field-error" *ngIf="_isInvalidControl('name')">
+        <ion-input placeholder="Firstname" formControlName="firstname"/>
+        <div class="field-error" *ngIf="_isInvalidControl('firstname')">
           <p>Please enter Username</p>
         </div>
+        <ion-input placeholder="Lstname" formControlName="lastname"/>
+        <div class="field-error" *ngIf="_isInvalidControl('lastname')">
+          <p>Please enter Username</p>
+        </div>
+
         <ion-input placeholder=" Email Aaddres" formControlName="emailAddress"/>
         <div class="field-error" *ngIf="_isInvalidControl('EmailAddress')">
           <p>Please enter email address</p>
