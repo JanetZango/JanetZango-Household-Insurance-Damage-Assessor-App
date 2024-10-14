@@ -41,3 +41,15 @@ Download jdk-8u361-windows-x64 <br/>
 3.Open terminal on your pc <br/>
 4.Type 'git clone [git link] then press enter <br/>
 5.Once its done installing on the project using Visual Studio Code <br/>
+
+## Authors 
+Janet Zango <br/>
+https://github.com/JanetZango/JanetZango-Household-Insurance-Damage-Assessor-App
+
+## Version History
+- 0.0.1 <br/>
+  Initial Release
+
+## License
+This project is licensed under the Janet Zango License - see the LICENSE.md file for details
+
