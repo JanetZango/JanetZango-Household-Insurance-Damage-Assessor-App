@@ -3,8 +3,9 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { AlertController } from '@ionic/angular';
 import { Authentification } from 'src/model/Authentification.model';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
-import { Router } from '@angular/router';
+import { Router,NavigationExtras } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+
 
 
 @Component({
@@ -15,6 +16,7 @@ import { LoadingController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   signInForm!: FormGroup
   access_token:any
+  ArrayEmail=[]
   private Authentification!: Authentification
   constructor(private formBuilder: FormBuilder, public household: HouseholdProvider,
     public alertCtrl: AlertController, private router: Router,public loader:LoadingController ) {
@@ -43,13 +45,16 @@ export class LoginPage implements OnInit {
     this.Authentification.password = this.signInForm.value.password
     this.household.AuthentificationUser(this.Authentification).subscribe(async _responseLoginUser => {
       console.log(_responseLoginUser)
-      this.access_token = _responseLoginUser
-  
+          var emailAddres=this.signInForm.value.emailAddress
           
-          this.router.navigate(['/list-of-houses-added'])
+          const params : NavigationExtras={
+            queryParams:{
+              emailAddres:emailAddres
+            }
+          }
+          this.router.navigate(['/list-of-houses-added'],params)
   
-      
-   
+    
     },
       async (error: any) => {
         console.log('error')

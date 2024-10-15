@@ -3,5 +3,6 @@ export class AddHouse{
     public houseImage!:string;
     public address!:string;
     public location!:string
+    public userID!:string
     public images!:[]
 }

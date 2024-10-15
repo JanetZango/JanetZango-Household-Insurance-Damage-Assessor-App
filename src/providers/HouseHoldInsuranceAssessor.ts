@@ -51,17 +51,35 @@ export class HouseholdProvider {
     }
 
     // get moethod
-    GetHousesSavedApi(token:any) {
-        // console.log(token)
+    GetHousesSavedApi() {
+        const url = `${this.baseUrl}/api/house/GetHouses` 
+        var dataUser = this.http.get(url, httpOptions)
+        return dataUser
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
+    GetProfileApi(token:any) {
+        console.log(token)
         let headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         });
         let options = { headers: headers };
-        // console.log(options)
+        console.log(options)
 
-        const url = `${this.baseUrl}/api/house/GetHouse` 
+        const url = `${this.baseUrl}/api/account/GetProfile` 
         var dataUser = this.http.get(url, options)
+        return dataUser
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+    getUserApis() {
+        const url = `${this.baseUrl}/api/account/GetUsers` 
+        var dataUser = this.http.get(url, httpOptions)
+        console.log(dataUser)
         return dataUser
             .pipe(
                 catchError(this.handleError)
@@ -71,8 +89,8 @@ export class HouseholdProvider {
 
 
     // Delete Mothod
-    DeleteHouse(Authentification: Authentification) {
-        const url = `${this.baseUrl}/api/house/DeleteHouse`
+    DeleteHouse(ID:any) {
+        const url = `${this.baseUrl}/api/house/DeleteHouse?ID=`+ID
         var dataUser = this.http.get(url, httpOptions)
         return dataUser
             .pipe(

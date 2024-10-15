@@ -18,6 +18,10 @@
         <div class="field-error" *ngIf="_isInvalidControl('EmailAddress')">
           <p>Please enter email address</p>
         </div>
+        <ion-input placeholder="Contact" formControlName="contact"/>
+        <div class="field-error" *ngIf="_isInvalidControl('contact')">
+          <p>Please enter contact</p>
+        </div>
         <ion-input placeholder="Password" formControlName="password"/>
         <div class="field-error" *ngIf="_isInvalidControl('password')">
           <p>Please enter password</p>

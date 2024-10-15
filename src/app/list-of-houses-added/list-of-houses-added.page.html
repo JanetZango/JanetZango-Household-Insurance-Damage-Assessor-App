@@ -1,18 +1,15 @@
 <ion-content [fullscreen]="true">
   <div class="top">
-    <ion-button fill="clear" routerLink="/add-damage-house-images"><ion-icon name="add"></ion-icon></ion-button>
+    <ion-button fill="clear" routerLink="/add-damage-house-images" (click)="GoToAddHouse()"><ion-icon name="add"></ion-icon></ion-button>
   </div>
   <div class="cards">
-    <div class="mainCard">
+    <div class="mainCard" *ngFor="let a of houseListArray">
       <div class="img">
-      <img src="../../assets/Images/House.jpg"/>
+      <img src="{{a.houseImage}}"/>
       </div>
       <div class="description">
-      <p id="descriptionParagraph">Houses generally have doors or locks to secure the dwelling space and
-         protect its inhabitants and contents from burglars or other trespassers.
-          Most conventional modern houses in Western cultures will contain one or more bedrooms and bathrooms,
-         a kitchen or cooking area, and a living room</p>
-         <ion-button fill="clear" routerLink="/add-multiple-images-for-damage">Read More</ion-button>
+      <p id="descriptionParagraph">{{a.description}}</p>
+         <ion-button fill="clear" routerLink="/add-multiple-images-for-damage" (click)="ReadMore(a)" >Read More</ion-button>
       </div>
     </div>
   </div>

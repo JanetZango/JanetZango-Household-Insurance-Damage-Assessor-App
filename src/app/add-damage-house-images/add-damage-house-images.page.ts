@@ -4,6 +4,8 @@ import { CoordinatesServices } from 'src/providers/Geoloation';
 import { RegisterUser } from 'src/model/RegisterUser.model';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
 import { AddHouse } from 'src/model/AddHouse.model';
+import { ActivatedRoute } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-add-damage-house-images',
@@ -14,16 +16,42 @@ export class AddDamageHouseImagesPage implements OnInit {
   //variables
   HouseUrl = "../../assets/Images/defaultImage.jpg";
   DisplayCurrentLocation: any;
-  description:any
-  private AddHouse!:AddHouse
-  address:any
-  constructor(public alertCtrl: AlertController, public geo: CoordinatesServices,public household:HouseholdProvider) {
+  description: any
+  private AddHouse!: AddHouse
+  address: any
+  getEmailAddress: any
+  constructor(public alertCtrl: AlertController, public geo: CoordinatesServices, private router: Router,
+    public household: HouseholdProvider, private route: ActivatedRoute) {
     this.DisplayCurrentLocation = this.geo.printCurrentPosition();
     console.log("yes", this.DisplayCurrentLocation)
+
+    this.route.queryParams.subscribe(params => {
+      this.getEmailAddress = params["emailAddres"];
+      console.log(this.getEmailAddress)
+
+      this.household.getUserApis().subscribe((data: any) => {
+        console.log(data.userList[0].emailAddress)
+
+        for(var i=0; i<data.length;i++){
+          console.log(data.userList[i])
+          if(this.getEmailAddress == data.userList[i].emailAddress
+          ){
+            let obj ={
+              userID: data.userList[i].userID
+
+            }
+            console.log(obj)
+          }
+        }
+      
+
+      })
+    })
 
   }
 
   ngOnInit() {
+
   }
   async insertImagine(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -46,25 +74,29 @@ export class AddDamageHouseImagesPage implements OnInit {
       }
     }
   }
-  AddHouseButton(){
-  this.AddHouse = new AddHouse
-  this.AddHouse.description = this.description
-  this.AddHouse.houseImage = this.HouseUrl
-  this.AddHouse.address = this.address
-  console.log(this.AddHouse)
-  this.household.SaveHouseDetailsApi(this.AddHouse).subscribe(_responseHouse =>{
-    console.log(_responseHouse)
+  AddHouseButton() {
+    this.AddHouse = new AddHouse
+    this.AddHouse.description = this.description
+    this.AddHouse.houseImage = this.HouseUrl
+    this.AddHouse.address = 'soweto'
+    this.AddHouse.userID = '59cfc14f-dc06-4304-a935-a0bd43337892'
+    this.AddHouse.location = "YES"
+    // this.AddHouse.images={}
 
-  },
-  async (error: any) => {
-    console.log('error')
-    const alert = await this.alertCtrl.create({
-      header: "Oh no!",
-      message: "Information not saved",
-      buttons: ['OK'],
-      cssClass: "myAlert",
-    });
-    await alert.present();
-  });
-}
+    console.log(this.AddHouse)
+    this.household.SaveHouseDetailsApi(this.AddHouse).subscribe(_responseHouse => {
+      console.log(_responseHouse)
+
+    },
+      async (error: any) => {
+        console.log('error')
+        const alert = await this.alertCtrl.create({
+          // header: "Oh no!",
+          message: "Information not saved",
+          buttons: ['OK'],
+          cssClass: "myAlert",
+        });
+        await alert.present();
+      });
+  }
 }

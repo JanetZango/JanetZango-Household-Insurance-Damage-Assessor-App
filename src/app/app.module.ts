@@ -10,6 +10,8 @@ import { CoordinatesServices } from 'src/providers/Geoloation';
 import { HouseholdProvider } from 'src/providers/HouseHoldInsuranceAssessor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfigService } from 'src/providers/Config';
+import { NavParams } from '@ionic/angular';
+
 
 
 
@@ -22,10 +24,11 @@ import { ConfigService } from 'src/providers/Config';
     ReactiveFormsModule,
     HttpClientModule,
 
+
   ]
     ,
   providers: [
-    CoordinatesServices,HouseholdProvider,ConfigService,
+    CoordinatesServices,HouseholdProvider,ConfigService, NavParams, 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent],
